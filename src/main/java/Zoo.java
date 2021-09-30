@@ -13,11 +13,11 @@ public class Zoo {
         visitors.add(visitor);
     }
 
-    public Map<AnimalType, Integer> animalFrequency () {
-        Map<AnimalType, Integer> freqTable = new HashMap<>();
+    public Map<String, Integer> animalFrequency () {
+        Map<String, Integer> freqTable = new HashMap<>();
         // todo calculate frequency of each animaltype
         for (Animal animal : animals) {
-            AnimalType animalType = animal.getTypeOfAnimal();
+            String animalType = animal.getClass().getTypeName();
 
             if (freqTable.containsKey(animalType)) {
                 int count = freqTable.get(animalType);

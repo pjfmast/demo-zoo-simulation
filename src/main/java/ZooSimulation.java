@@ -2,10 +2,10 @@ public class ZooSimulation {
     public static void main(String[] args) {
         Zoo beekseBergen = new Zoo();
 
-        beekseBergen.addAnimal(new Animal("Bokito", AnimalType.GORILLA, 42, 150));
-        beekseBergen.addAnimal(new Animal("KopInhetZand", AnimalType.OSTRICH, 22, 16));
-        beekseBergen.addAnimal(new Animal("Tijgeltje", AnimalType.TIGER, 32, 120));
-        beekseBergen.addAnimal(new Animal("Jane", AnimalType.GORILLA, 42, 150));
+        beekseBergen.addAnimal(new Gorilla("Bokito", 42, 150, 220, false));
+        beekseBergen.addAnimal(new Ostrich("KopInhetZand", 22, 16, 60));
+        beekseBergen.addAnimal(new Tiger("Tijgeltje",  32, 120, 36));
+        beekseBergen.addAnimal(new Gorilla("Jane",  42, 150, 210, true));
 
         beekseBergen.addVisitor(new Visitor("John"));
         beekseBergen.addVisitor(new Visitor("Kees"));

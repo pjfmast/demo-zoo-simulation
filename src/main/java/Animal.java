@@ -1,15 +1,15 @@
-public class Animal implements Acting, Comparable<Animal> {
+public abstract class Animal implements Acting, Comparable<Animal> {
     private String name;
-    private final AnimalType typeOfAnimal;
     private int age; // in months
     private int weight;
 
-    public Animal(String name, AnimalType typeOfAnimal, int age, int weight) {
+    public Animal(String name, int age, int weight) {
         this.name = name;
-        this.typeOfAnimal = typeOfAnimal;
         this.age = age;
         this.weight = weight;
     }
+
+    public abstract void eat();
 
     public String getName() {
         return name;
@@ -19,31 +19,33 @@ public class Animal implements Acting, Comparable<Animal> {
         this.name = name;
     }
 
-    public AnimalType getTypeOfAnimal() {
-        return typeOfAnimal;
-    }
 
     public int getAge() {
         return age;
     }
 
-    // Lambda
+
+    /*
+    // Do not do this: 
     @Override
     public void doAct() {
         System.out.print(name + ": ");
-        switch (typeOfAnimal) {
+        switch (this.getClass().getTypeName()) {
 
-            case GORILLA -> {
+            case "Gorilla" -> {
                 System.out.println("Impresses people by making noise");
             }
-            case TIGER -> {
+            case "Tiger" -> {
                 System.out.println("Hunts on the visitors");
             }
-            case OSTRICH -> {
+            case "Ostrich" -> {
                 System.out.println("Puts head in the sand");
             }
         }
     }
+    */
+
+
 
     @Override
     public int compareTo(Animal o) {
